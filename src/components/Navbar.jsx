@@ -1,26 +1,19 @@
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
-    return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3">
-            <Link className="navbar-brand fw-bold" to="/">Contact List</Link>
+export const Navbar = () => {
 
-            <button
-                className="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-            >
-                <span className="navbar-toggler-icon"></span>
-            </button>
-
-            <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav ms-auto">
-                    <li className="nav-item">
-                        <Link className="btn btn-primary" to="/add">+ Add Contact</Link>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    );
-}
+	return (
+		<nav className="navbar navbar-light bg-light">
+			<div className="container">
+				<Link to="/">
+					<span className="navbar-brand mb-0 h1">Home</span>
+				</Link>
+				<div className="ml-auto">
+					<Link to="/demo">
+						<button className="btn btn-primary">Check the Context in action</button>
+					</Link>
+				</div>
+			</div>
+		</nav>
+	);
+};

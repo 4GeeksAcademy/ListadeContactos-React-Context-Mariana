@@ -1,10 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { Layout } from "./pages/Layout";   
-import "./index.css";                     
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'  
+import { RouterProvider } from "react-router-dom";  
+import { router } from "./routes";
+import { StoreProvider } from './hooks/useGlobalReducer';  
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-    <React.StrictMode>
-        <Layout />
-    </React.StrictMode>
-);
+const Main = () => {
+    return (
+        <React.StrictMode>  
+         
+            <StoreProvider> 
+               
+                <RouterProvider router={router}>
+                </RouterProvider>
+            </StoreProvider>
+        </React.StrictMode>
+    );
+}
+
+
+ReactDOM.createRoot(document.getElementById('root')).render(<Main />)
