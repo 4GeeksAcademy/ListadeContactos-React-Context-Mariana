@@ -18,7 +18,7 @@ export const initialStore = () => {
 
    
     contactToChange: {
-      name: "Sean",
+      name: "mariana",
       phone: "999",
       email: "eee",
       address: "aaa",

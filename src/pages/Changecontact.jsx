@@ -6,7 +6,7 @@ const Changecontact = () => {
   const { store, dispatch } = useGlobalReducer();
   const navigate = useNavigate();
 
-  // ✅ asegúrate que esto exista
+ 
   const contact = store.contactToChange || {};
 
   const [name, setName] = useState(contact.name || "");
@@ -14,7 +14,7 @@ const Changecontact = () => {
   const [phone, setPhone] = useState(contact.phone || "");
   const [email, setEmail] = useState(contact.email || "");
 
-  // ✅ pon aquí TU SLUG REAL (ej: "agendaMariana" o "marianadavid")
+ 
   const AGENDA_SLUG = store.agendaSlug || "agendaMariana";
   const BASE_URL = store.baseURL || "https://playground.4geeks.com/contact";
 
@@ -29,7 +29,7 @@ const Changecontact = () => {
       body: JSON.stringify(payload),
     });
 
-    // ✅ DEBUG: para ver por qué falla cuando falla
+   
     const text = await response.text();
     console.log("PUT URL:", url);
     console.log("PUT STATUS:", response.status);
@@ -50,12 +50,11 @@ const Changecontact = () => {
       return;
     }
 
-    // ✅ si tienes una acción para recargar contactos, úsala
+    
     if (typeof store.loadContacts === "function") {
       await store.loadContacts();
     }
-    // o si tienes dispatch actions:
-    // dispatch({ type: "load_contacts" });
+    
 
     navigate("/");
   };

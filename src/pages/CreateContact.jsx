@@ -29,7 +29,7 @@ export const CreateContact = () => {
         address: newContactAddress,
       }),
     };
-    fetch(store.baseURL + "/agendas/mariana-david/contacts", options)
+    fetch(store.baseURL + "/agendas/agendaMariana/contacts", options)
       .then((resp) => resp.json())
       .then((data) => console.log("Data of Contacts: ", data));
   };

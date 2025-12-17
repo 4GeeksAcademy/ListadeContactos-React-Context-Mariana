@@ -23,11 +23,11 @@ export const Home = () => {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
-        slug: "sean-hammond",
+        slug: "agendaMariana",
         id: 0,
       }),
     };
-    fetch(store.baseURL + "/agendas/mariana-david", options)
+    fetch(store.baseURL + "/agendas/agendaMariana", options)
       .then((resp) => resp.json())
       .then((data) => {
         setUser(data.detail);
@@ -46,13 +46,13 @@ export const Home = () => {
         address: "Your address",
       }),
     };
-    fetch(store.baseURL + "/agendas/mariana-david/contacts", options)
+    fetch(store.baseURL + "/agendas/agendaMariana/contacts", options)
       .then((resp) => resp.json())
       .then((data) => console.log("Data of Contacts: ", data));
   };
 
   const getContacts = () => {
-    fetch(store.baseURL + "/agendas/mariana-david/contacts")
+    fetch(store.baseURL + "/agendas/agendaMariana/contacts")
       .then((resp) => resp.json())
       .then((data) => {
         setContactList(data.contacts);
@@ -65,7 +65,7 @@ export const Home = () => {
       headers: { "content-type": "application/json" },
     };
     fetch(
-      store.baseURL + "/agendas/mariana-david/contacts/" + contactId,
+      store.baseURL + "/agendas/agendaMariana/contacts/" + contactId,
       options
     )
       .then((response) => response.json())
